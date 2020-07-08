@@ -16,15 +16,15 @@ spec:
         app: apache
     spec:
       containers:
-      - image: httpd
-        name: apache
+      - image: "vimal13/apache-webserver-php"
+        name: "apache"
         ports:
          - containerPort: 31000
            name: apache
         volumeMounts:
-          - name: apache-vol
-            mountPath: /var/www/html
-     volumes:
+        - name: apache-vol
+          mountPath: /var/www/html
+      volumes:
       - name: apache-vol
         persistentVolumeClaim:
           claimName: apache-pv-claim1
